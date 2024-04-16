@@ -10,7 +10,7 @@ from ssim_torch import ssim
 
 def generate_masks(mask_path, batch_size):
     nC = 28
-    mask = scio.loadmat(mask_path)
+    mask = sio.loadmat(mask_path)
     mask_3d_shift = mask['mask_3d_shift']
     mask_3d_shift = np.transpose(mask_3d_shift, [2, 0, 1])
     mask_3d_shift = torch.from_numpy(mask_3d_shift)
